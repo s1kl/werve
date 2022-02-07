@@ -1,0 +1,256 @@
+body {
+  // font-family: "Gill Sans", sans-serif;// font-size: auto;
+  font-weight: bold;
+  line-height: 300%;
+  letter-spacing: 1px;
+}
+
+html,
+body:not(#range) {
+  overflow: hidden;
+  touch-action: pinch-zoom;
+}
+
+.canvas-wrap {
+  border-style: solid;
+  border-width: 1px;
+
+  @media (orientation: landscape) {
+    width: min(90vw, 90vh);
+    height: min(90vw, 90vh);
+  }
+
+  @media (max-aspect-ratio: 1110 / 967) {
+    width: min(85vw, 85vh);
+    height: min(85vw, 85vh);
+  }
+}
+
+.canvas {
+  position: absolute;
+
+  @media (orientation: landscape) {
+    width: min(90vw, 90vh);
+    height: min(90vw, 90vh);
+  }
+
+  @media (max-aspect-ratio: 1110 / 967) {
+    width: min(85vw, 85vh);
+    height: min(85vw, 85vh);
+  }
+}
+
+#flex1 {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+
+  @media (orientation: landscape) {
+    margin-top: 3vh;
+  }
+
+  @media (max-aspect-ratio: 1110 / 967) {
+    margin-top: 0;
+  }
+}
+
+#flex2 {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  @media (orientation: landscape) {
+    justify-content: space-around;
+    width: 20vw;
+  }
+
+  @media (max-aspect-ratio: 1110 / 967) {
+    justify-content: space-between;
+    width: min(85vw, 85vh);
+  }
+}
+
+.check,
+.radio {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.check-label {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.radio-label {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.check:focus + .check-label {
+  outline-width: 5px;
+  outline-style: auto;
+  outline-offset: 3px;
+}
+
+.radio:focus + .radio-label {
+  outline-width: 5px;
+  outline-style: auto;
+  outline-offset: 3px;
+}
+
+#range-label {
+  margin-bottom: -25px;
+  text-align: center;
+}
+
+#range {
+  appearance: none;
+  height: 14px;
+  border-radius: 5px;
+
+  @media (orientation: landscape) {
+    width: 20vw;
+  }
+
+  @media (max-aspect-ratio: 1110 / 967) {
+    width: min(85vw, 85vh);
+  }
+}
+
+#range::-webkit-slider-thumb {
+  width: 24px;
+  height: 24px;
+  appearance: none;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 50%;
+}
+
+#range::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 50%;
+}
+
+@media (prefers-color-scheme: light) {
+  $color1: #dc493a;
+  $color2: #4392f1;
+  $color3: #1d3461;
+  $color4: #ece8ef;
+
+  body {
+    background-color: $color4;
+  }
+
+  .canvas-wrap {
+    border-color: $color3;
+  }
+
+  .check-label {
+    color: $color1;
+  }
+
+  .radio-label {
+    color: $color2;
+  }
+
+  .check:checked + .check-label {
+    color: $color4;
+    background: $color1;
+  }
+
+  .check:focus + .check-label {
+    outline-color: $color1;
+  }
+
+  .radio:checked + .radio-label {
+    color: $color4;
+    background: $color2;
+  }
+
+  .radio:focus + .radio-label {
+    outline-color: $color2;
+  }
+
+  #range-label {
+    color: $color3;
+  }
+
+  #range {
+    background: $color3;
+  }
+
+  #range::-webkit-slider-thumb {
+    background: $color4;
+    border-color: $color3;
+  }
+
+  #range::-moz-range-thumb {
+    background: $color4;
+    border-color: $color3;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  $color1: #ee4266;
+  $color2: #5cc8ff;
+  $color3: #ece2d0;
+  $color4: #2e2836;
+
+  body {
+    background-color: $color4;
+  }
+
+  .canvas-wrap {
+    border-color: $color3;
+  }
+
+  .check-label {
+    color: $color1;
+  }
+
+  .radio-label {
+    color: $color2;
+  }
+
+  .check:checked + .check-label {
+    color: $color4;
+    background: $color1;
+  }
+
+  .check:focus + .check-label {
+    outline-color: $color1;
+  }
+
+  .radio:checked + .radio-label {
+    color: $color4;
+    background: $color2;
+  }
+
+  .radio:focus + .radio-label {
+    outline-color: $color2;
+  }
+
+  #range-label {
+    color: $color3;
+  }
+
+  #range {
+    background: $color3;
+  }
+
+  #range::-webkit-slider-thumb {
+    background: $color4;
+    border-color: $color3;
+  }
+
+  #range::-moz-range-thumb {
+    background: $color4;
+    border-color: $color3;
+  }
+}
