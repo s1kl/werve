@@ -7,8 +7,10 @@ body {
 
 html,
 body:not(#range) {
-  overflow: hidden;
-  touch-action: pinch-zoom;
+  @media (max-aspect-ratio: 1110 / 967) {
+    overflow: hidden;
+    touch-action: pinch-zoom;
+  }
 }
 
 .canvas-wrap {
